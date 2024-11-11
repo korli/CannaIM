@@ -93,8 +93,10 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 
 	BRect largerect( 0, 0, HexOnwidth - 1, HexOnheight - 1 );
 	BRect smallrect( 0, 0, HiraOnwidth - 1, HiraOnheight - 1);
-	int32 largebytes = HexOnbytesperpixel * HexOnwidth * HexOnheight;
-	int32 smallbytes = HiraOnbytesperpixel * HiraOnwidth * HiraOnheight;
+	int32 largerow = HexOnbytesperpixel * HexOnwidth;
+	int32 smallrow = HiraOnbytesperpixel * HiraOnwidth;
+	int32 largebytes = largerow * HexOnheight;
+	int32 smallbytes = smallrow * HiraOnheight;
 	color_space cspace = HexOncspace;
 	BPicture *onpict, *offpict;
 	BBitmap *smallimage, *largeimage;
@@ -104,11 +106,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 
 	fBack->MovePenTo( 0, 0 );
 
-	smallimage->SetBits( HiraOnbits, smallbytes, 0, cspace );
+	smallimage->ImportBits( HiraOnbits, smallbytes, smallrow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( smallimage );
 	onpict = fBack->EndPicture();
-	smallimage->SetBits( HiraOffbits, smallbytes, 0, cspace );
+	smallimage->ImportBits( HiraOffbits, smallbytes, smallrow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( smallimage );
 	offpict = fBack->EndPicture();
@@ -119,11 +121,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 		msg, B_TWO_STATE_BUTTON );
 	fBack->AddChild( HiraButton );
 
-	smallimage->SetBits( KataOnbits, smallbytes, 0, cspace );
+	smallimage->ImportBits( KataOnbits, smallbytes, smallrow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( smallimage );
 	onpict = fBack->EndPicture();
-	smallimage->SetBits( KataOffbits, smallbytes, 0, cspace );
+	smallimage->ImportBits( KataOffbits, smallbytes, smallrow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( smallimage );
 	offpict = fBack->EndPicture();
@@ -134,11 +136,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 		msg, B_TWO_STATE_BUTTON );
 	fBack->AddChild( KataButton );
 
-	smallimage->SetBits( ZenAlphaOnbits, smallbytes, 0, cspace );
+	smallimage->ImportBits( ZenAlphaOnbits, smallbytes, smallrow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( smallimage );
 	onpict = fBack->EndPicture();
-	smallimage->SetBits( ZenAlphaOffbits, smallbytes, 0, cspace );
+	smallimage->ImportBits( ZenAlphaOffbits, smallbytes, smallrow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( smallimage );
 	offpict = fBack->EndPicture();
@@ -149,11 +151,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 		msg, B_TWO_STATE_BUTTON );
 	fBack->AddChild( ZenAlphaButton );
 
-	smallimage->SetBits( HanAlphaOnbits, smallbytes, 0, cspace );
+	smallimage->ImportBits( HanAlphaOnbits, smallbytes, smallrow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( smallimage );
 	onpict = fBack->EndPicture();
-	smallimage->SetBits( HanAlphaOffbits, smallbytes, 0, cspace );
+	smallimage->ImportBits( HanAlphaOffbits, smallbytes, smallrow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( smallimage );
 	offpict = fBack->EndPicture();
@@ -164,11 +166,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 		msg, B_TWO_STATE_BUTTON );
 	fBack->AddChild( HanAlphaButton );
 
-	largeimage->SetBits( ExtendOnbits, largebytes, 0, cspace );
+	largeimage->ImportBits( ExtendOnbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	onpict = fBack->EndPicture();
-	largeimage->SetBits( ExtendOffbits, largebytes, 0, cspace );
+	largeimage->ImportBits( ExtendOffbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	offpict = fBack->EndPicture();
@@ -179,11 +181,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 		msg, B_TWO_STATE_BUTTON );
 	fBack->AddChild( ExtendButton );
 
-	largeimage->SetBits( KigoOnbits, largebytes, 0, cspace );
+	largeimage->ImportBits( KigoOnbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	onpict = fBack->EndPicture();
-	largeimage->SetBits( KigoOffbits, largebytes, 0, cspace );
+	largeimage->ImportBits( KigoOffbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	offpict = fBack->EndPicture();
@@ -194,11 +196,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 		msg, B_TWO_STATE_BUTTON );
 	fBack->AddChild( KigoButton );
 
-	largeimage->SetBits( HexOnbits, largebytes, 0, cspace );
+	largeimage->ImportBits( HexOnbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	onpict = fBack->EndPicture();
-	largeimage->SetBits( HexOffbits, largebytes, 0, cspace );
+	largeimage->ImportBits( HexOffbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	offpict = fBack->EndPicture();
@@ -209,11 +211,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 		msg, B_TWO_STATE_BUTTON );
 	fBack->AddChild( HexButton );
 
-	largeimage->SetBits( BushuOnbits, largebytes, 0, cspace );
+	largeimage->ImportBits( BushuOnbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	onpict = fBack->EndPicture();
-	largeimage->SetBits( BushuOffbits, largebytes, 0, cspace );
+	largeimage->ImportBits( BushuOffbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	offpict = fBack->EndPicture();
@@ -225,11 +227,11 @@ PaletteWindow::PaletteWindow( BRect rect, BLooper *looper )
 	fBack->AddChild( BushuButton );
 
 #if 0
-	largeimage->SetBits( TorokuOnbits, largebytes, 0, cspace );
+	largeimage->ImportBits( TorokuOnbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	onpict = fBack->EndPicture();
-	largeimage->SetBits( TorokuOffbits, largebytes, 0, cspace );
+	largeimage->ImportBits( TorokuOffbits, largebytes, largerow, 0, cspace );
 	fBack->BeginPicture( new BPicture );
 	fBack->DrawBitmap( largeimage );
 	offpict = fBack->EndPicture();
