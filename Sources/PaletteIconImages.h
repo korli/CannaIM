@@ -1,6 +1,6 @@
 #define BushuOnwidth 28
 #define BushuOnheight 20
-#define BushuOncspace B_RGB32
+#define BushuOncspace B_RGB24
 #define BushuOnbytesperpixel 3
 
 unsigned char BushuOnbits[] = {
@@ -119,7 +119,7 @@ unsigned char BushuOnbits[] = {
 };
 #define BushuOffwidth 28
 #define BushuOffheight 20
-#define BushuOffcspace B_RGB32
+#define BushuOffcspace B_RGB24
 #define BushuOffbytesperpixel 3
 
 unsigned char BushuOffbits[] = {
@@ -238,7 +238,7 @@ unsigned char BushuOffbits[] = {
 };
 #define ExtendOnwidth 28
 #define ExtendOnheight 20
-#define ExtendOncspace B_RGB32
+#define ExtendOncspace B_RGB24
 #define ExtendOnbytesperpixel 3
 
 unsigned char ExtendOnbits[] = {
@@ -357,7 +357,7 @@ unsigned char ExtendOnbits[] = {
 };
 #define ExtendOffwidth 28
 #define ExtendOffheight 20
-#define ExtendOffcspace B_RGB32
+#define ExtendOffcspace B_RGB24
 #define ExtendOffbytesperpixel 3
 
 unsigned char ExtendOffbits[] = {
@@ -476,7 +476,7 @@ unsigned char ExtendOffbits[] = {
 };
 #define HanAlphaOnwidth 20
 #define HanAlphaOnheight 20
-#define HanAlphaOncspace B_RGB32
+#define HanAlphaOncspace B_RGB24
 #define HanAlphaOnbytesperpixel 3
 
 unsigned char HanAlphaOnbits[] = {
@@ -563,7 +563,7 @@ unsigned char HanAlphaOnbits[] = {
 };
 #define HanAlphaOffwidth 20
 #define HanAlphaOffheight 20
-#define HanAlphaOffcspace B_RGB32
+#define HanAlphaOffcspace B_RGB24
 #define HanAlphaOffbytesperpixel 3
 
 unsigned char HanAlphaOffbits[] = {
@@ -650,7 +650,7 @@ unsigned char HanAlphaOffbits[] = {
 };
 #define HexOnwidth 28
 #define HexOnheight 20
-#define HexOncspace B_RGB32
+#define HexOncspace B_RGB24
 #define HexOnbytesperpixel 3
 
 unsigned char HexOnbits[] = {
@@ -769,7 +769,7 @@ unsigned char HexOnbits[] = {
 };
 #define HexOffwidth 28
 #define HexOffheight 20
-#define HexOffcspace B_RGB32
+#define HexOffcspace B_RGB24
 #define HexOffbytesperpixel 3
 
 unsigned char HexOffbits[] = {
@@ -888,7 +888,7 @@ unsigned char HexOffbits[] = {
 };
 #define HiraOnwidth 20
 #define HiraOnheight 20
-#define HiraOncspace B_RGB32
+#define HiraOncspace B_RGB24
 #define HiraOnbytesperpixel 3
 
 unsigned char HiraOnbits[] = {
@@ -975,7 +975,7 @@ unsigned char HiraOnbits[] = {
 };
 #define HiraOffwidth 20
 #define HiraOffheight 20
-#define HiraOffcspace B_RGB32
+#define HiraOffcspace B_RGB24
 #define HiraOffbytesperpixel 3
 
 unsigned char HiraOffbits[] = {
@@ -1062,7 +1062,7 @@ unsigned char HiraOffbits[] = {
 };
 #define KataOnwidth 20
 #define KataOnheight 20
-#define KataOncspace B_RGB32
+#define KataOncspace B_RGB24
 #define KataOnbytesperpixel 3
 
 unsigned char KataOnbits[] = {
@@ -1149,7 +1149,7 @@ unsigned char KataOnbits[] = {
 };
 #define KataOffwidth 20
 #define KataOffheight 20
-#define KataOffcspace B_RGB32
+#define KataOffcspace B_RGB24
 #define KataOffbytesperpixel 3
 
 unsigned char KataOffbits[] = {
@@ -1236,7 +1236,7 @@ unsigned char KataOffbits[] = {
 };
 #define KigoOnwidth 28
 #define KigoOnheight 20
-#define KigoOncspace B_RGB32
+#define KigoOncspace B_RGB24
 #define KigoOnbytesperpixel 3
 
 unsigned char KigoOnbits[] = {
@@ -1355,7 +1355,7 @@ unsigned char KigoOnbits[] = {
 };
 #define KigoOffwidth 28
 #define KigoOffheight 20
-#define KigoOffcspace B_RGB32
+#define KigoOffcspace B_RGB24
 #define KigoOffbytesperpixel 3
 
 unsigned char KigoOffbits[] = {
@@ -1474,7 +1474,7 @@ unsigned char KigoOffbits[] = {
 };
 #define TorokuOnwidth 24
 #define TorokuOnheight 16
-#define TorokuOncspace B_RGB32
+#define TorokuOncspace B_RGB24
 #define TorokuOnbytesperpixel 3
 
 unsigned char TorokuOnbits[] = {
@@ -1557,7 +1557,7 @@ unsigned char TorokuOnbits[] = {
 0xeb,0xeb,0xeb,0xeb,0xeb,0xeb,0xeb,0xeb,0xeb,0xeb,0xeb,0xeb,};
 #define TorokuOffwidth 24
 #define TorokuOffheight 16
-#define TorokuOffcspace B_RGB32
+#define TorokuOffcspace B_RGB24
 #define TorokuOffbytesperpixel 3
 
 unsigned char TorokuOffbits[] = {
@@ -1640,7 +1640,7 @@ unsigned char TorokuOffbits[] = {
 0xa0,0xa0,0xa0,0xa0,0xa0,0xa0,0xa0,0xa0,0xa0,0xa0,0xa0,0xa0,};
 #define ZenAlphaOnwidth 20
 #define ZenAlphaOnheight 20
-#define ZenAlphaOncspace B_RGB32
+#define ZenAlphaOncspace B_RGB24
 #define ZenAlphaOnbytesperpixel 3
 
 unsigned char ZenAlphaOnbits[] = {
@@ -1727,7 +1727,7 @@ unsigned char ZenAlphaOnbits[] = {
 };
 #define ZenAlphaOffwidth 20
 #define ZenAlphaOffheight 20
-#define ZenAlphaOffcspace B_RGB32
+#define ZenAlphaOffcspace B_RGB24
 #define ZenAlphaOffbytesperpixel 3
 
 unsigned char ZenAlphaOffbits[] = {
